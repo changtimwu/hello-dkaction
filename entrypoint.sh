@@ -2,5 +2,7 @@
 echo "Hello $1"
 time=$(date)
 echo "::set-output name=time::$time"
-cpuinfo=`lscpu |grep "Model name"`
+lscpu
+cpuinfo=$(lscpu |grep "Model name")
+echo "cpuinfo=$cpuinfo"
 echo "::set-output name=cpuinfo::$cpuinfo"

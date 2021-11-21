@@ -1,16 +1,15 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'rknn-toolkit2 as action'
+description: 'provide rknn-toolkit2 environment to process input files from repo'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
+  wkdir:
+    description: 'the directory to process'
+    default: 'mynet'
 outputs:
   time: # id of output
-    description: 'The time we greeted you'
+    description: 'When is the time'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.wkdir }}
